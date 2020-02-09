@@ -80,7 +80,7 @@ Component({
 
       // 绘制文字 canvasCtx.fillText()
       canvasCtx.beginPath()
-      // 设置字体颜色
+      // 设置字体的颜色
       canvasCtx.fillStyle = this.data.foreColor
       const font_size = 12
       canvasCtx.font = font_size + 'px Helvetica'
