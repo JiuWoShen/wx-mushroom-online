@@ -1,0 +1,17 @@
+<!--pages/phone_login/phone_login.wxml-->
+<view class="phone-login-container">
+  <text class="phone-validate">手机号验证</text>
+  <text class="subtitle">用于即时获取课程最新信息</text>
+  <view class="content">
+  <!-- 动态监听输入内容  及  双向绑定数据 -->
+    <input bindinput="inputChange" data-name="phone" value="{{phone}}" placeholder="请输入您的手机号" class="phone"></input>
+    <!-- 获取验证码的点击事件----及每隔60s才能继续请求信的验证码 -->
+    <view bindtap="getVcode" style="color:{{isCountDown ? '#ccc' : '#000'}}" class="get_vcode">{{tips}}</view>
+    <!-- <view wx:else class="get_vcode">{{daotime}}s后重新获取</view> -->
+    <!-- 自定义属性----用来不同元素触发相同事件的事件源溯源 -->
+    <input class="vcode" bindinput="inputChange" data-name="vcode" value="{{vcode}}" placeholder="请输入验证码"></input>
+  </view>
+  <view class="phone-login">
+    <image bindtap="phoneLogin" src="/assets/images/phone_login@2x.png"></image>
+  </view>
+</view>

@@ -1,0 +1,2 @@
+<!--pages/course/course.wxml-->
+<course-list courses="{{courseList}}"></course-list>

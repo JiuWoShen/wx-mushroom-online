@@ -1,0 +1,16 @@
+<!--pages/search/search.wxml-->
+<view>
+	<include src="searchbar.wxml" />
+	<view class="search-body">
+  <!-- 一次性判断多个组件标签----block标签 -->
+    <block wx:if="{{courses.length === 0}}">
+      <view class="empty">
+        <text class="title">暂无内容哦~</text>
+      </view>
+    </block>
+    <block wx:else>
+    <!-- 前一个是子组件传过来的值，后一个是search自己的 -->
+      <course-list courses="{{courses}}"></course-list>
+    </block>
+	</view>
+</view>

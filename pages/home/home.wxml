@@ -1,0 +1,46 @@
+<!--pages/home/home.wxml-->
+<view class="home-container">
+  <!-- 搜索框----自定义组件：1.home.json中注册 2.以标签形式运用 -->
+  <search-bar tips="请输入课程名称"></search-bar>
+  <!-- 轮播图 -->
+  <swiper autoplay circular indicator-dots vertical interval="{{3000}}">
+  <!-- 编程式导航——---添加点击事件 -->
+  <!-- 声明式导航 -->
+  <!-- 遍历让每个图片都可以点击跳转-----并且携带ID -->
+    <navigator url='/pages/coursedetail/coursedetail?id={{item.id}}' wx:for='{{swipers}}' wx:key='*this'>
+    <!-- 进行数据渲染前先查看APPdata中是否有数据 -->
+      <swiper-item>
+        <image src="{{item.img_url}}"></image>
+      </swiper-item>
+    </navigator>
+  </swiper>
+  <!-- 推荐课程 -->
+  <view>
+    <view class="tips">
+      <text class="tip">推荐课程</text>
+      <!-- 点击到课程页面----tabBar页面 -->
+      <image bindtap="goToCourse" src="/assets/images/arrow@2x.png"></image>
+    </view>
+    <!-- 一定要指定一个滚动的方向 -->
+    <scroll-view scroll-x class="course-container">
+      <!-- 点击跳转 -->
+      <navigator url='/pages/coursedetail/coursedetail?id={{item.id}}' class="course-item" wx:for='{{courses}}' wx:key='*this'>
+        <image src="{{item.icon}}"></image>
+      </navigator>
+    </scroll-view>
+  </view>
+  <!-- 热门视频 -->
+  <view>
+    <view class="tips">
+      <text class="tip">热门视频</text>
+      <image src="/assets/images/arrow@2x.png"></image>
+    </view>
+    <view class="hot-video">
+      <navigator url='/pages/coursedetail/coursedetail?id={{item.id}}' class="video-item" wx:for='{{vidios}}' wx:key='*this'>
+        <image src="{{item.cover_photo_url}}"></image>
+        <text class="title">{{item.name}}</text>
+        <text class="subtitle">{{item.view_count}}人已观看</text>
+      </navigator>
+    </view>
+  </view>
+</view>

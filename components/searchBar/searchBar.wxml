@@ -1,0 +1,8 @@
+<!--components/searchBar.wxml-->
+<!--components/search-bar/search-bar.wxml-->
+<view bindtap="goToSearch" class="weui-search-bar__box">
+  <icon class="weui-icon-search_in-box" type="search" color="#ff8d44" size="15"></icon>
+  <view class="weui-search-bar__input" bindtap="goToSearchPage">
+    <text>{{tips}}</text>
+  </view>
+</view>

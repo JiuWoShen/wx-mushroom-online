@@ -1,0 +1,12 @@
+<!--login.wxml-->
+<view class="login-container">
+  <image src="/assets/images/logo@2x.png" class="logo" />
+  <text class="title">蘑菇在线</text>
+  <image src="/assets/images/login_tips@2x.png" class="login-tips"></image>
+  <!-- 绑定点击事件 与 微信开放能力-----点击背景色镂空-----获取用户信息的user小写 -->
+  <button plain open-type="getUserInfo" bindgetuserinfo="wxLogin" class="wx-login-button">
+    <image src="/assets/images/wx_login@2x.png" class="wx-login-img" />
+  </button>
+  <text class="phone-login" bindtap="goPhoneLogin">手机号登录</text>
+  <text class="bottom-tip">Copyright © 2020 蘑菇在线</text>
+</view>

@@ -1,0 +1,5 @@
+<!--components/circle/circle.wxml-->
+<view class="mp-circle-container">
+<!-- 每个画布必须有一个唯一的的canvasID -->
+  <canvas style="width:{{width}}px;height:{{height}}px" canvas-id="backgroudCanvas{{canvasId}}"></canvas>
+</view>
